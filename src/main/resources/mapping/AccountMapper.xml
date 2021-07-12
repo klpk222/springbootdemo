@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dj.springboot.dao.AccountMapper" >
+  <resultMap id="BaseResultMap" type="com.dj.springboot.entity.Account" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="company" property="company" jdbcType="VARCHAR" />
+    <result column="department" property="department" jdbcType="VARCHAR" />
+    <result column="duty" property="duty" jdbcType="VARCHAR" />
+    <result column="usertype" property="usertype" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="catalog" property="catalog" jdbcType="VARCHAR" />
+    <result column="issaleman" property="issaleman" jdbcType="VARCHAR" />
+    <result column="isactive" property="isactive" jdbcType="VARCHAR" />
+    <result column="registertime" property="registertime" jdbcType="TIMESTAMP" />
+    <result column="cooperatesource" property="cooperatesource" jdbcType="VARCHAR" />
+    <result column="position" property="position" jdbcType="VARCHAR" />
+    <result column="warehouse" property="warehouse" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="notifyway" property="notifyway" jdbcType="VARCHAR" />
+    <result column="accesstoken" property="accesstoken" jdbcType="VARCHAR" />
+    <result column="sortno" property="sortno" jdbcType="VARCHAR" />
+    <result column="team" property="team" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, username, password, company, department, duty, usertype, type, catalog, 
+    issaleman, isactive, registertime, cooperatesource, position, warehouse, sex, mobile, 
+    email, notifyway, accesstoken, sortno, team
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from account
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from account
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.dj.springboot.entity.Account" >
+    insert into account (id, name, username, 
+      password, company, department, 
+      duty, usertype, type, 
+      catalog, issaleman, isactive, 
+      registertime, cooperatesource, position, 
+      warehouse, sex, mobile, 
+      email, notifyway, accesstoken, 
+      sortno, team)
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{company,jdbcType=VARCHAR}, #{department,jdbcType=VARCHAR}, 
+      #{duty,jdbcType=VARCHAR}, #{usertype,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{catalog,jdbcType=VARCHAR}, #{issaleman,jdbcType=VARCHAR}, #{isactive,jdbcType=VARCHAR}, 
+      #{registertime,jdbcType=TIMESTAMP}, #{cooperatesource,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, 
+      #{warehouse,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{notifyway,jdbcType=VARCHAR}, #{accesstoken,jdbcType=VARCHAR}, 
+      #{sortno,jdbcType=VARCHAR}, #{team,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dj.springboot.entity.Account" >
+    insert into account
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="company != null" >
+        company,
+      </if>
+      <if test="department != null" >
+        department,
+      </if>
+      <if test="duty != null" >
+        duty,
+      </if>
+      <if test="usertype != null" >
+        usertype,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="catalog != null" >
+        catalog,
+      </if>
+      <if test="issaleman != null" >
+        issaleman,
+      </if>
+      <if test="isactive != null" >
+        isactive,
+      </if>
+      <if test="registertime != null" >
+        registertime,
+      </if>
+      <if test="cooperatesource != null" >
+        cooperatesource,
+      </if>
+      <if test="position != null" >
+        position,
+      </if>
+      <if test="warehouse != null" >
+        warehouse,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="mobile != null" >
+        mobile,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="notifyway != null" >
+        notifyway,
+      </if>
+      <if test="accesstoken != null" >
+        accesstoken,
+      </if>
+      <if test="sortno != null" >
+        sortno,
+      </if>
+      <if test="team != null" >
+        team,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null" >
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null" >
+        #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="duty != null" >
+        #{duty,jdbcType=VARCHAR},
+      </if>
+      <if test="usertype != null" >
+        #{usertype,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="catalog != null" >
+        #{catalog,jdbcType=VARCHAR},
+      </if>
+      <if test="issaleman != null" >
+        #{issaleman,jdbcType=VARCHAR},
+      </if>
+      <if test="isactive != null" >
+        #{isactive,jdbcType=VARCHAR},
+      </if>
+      <if test="registertime != null" >
+        #{registertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cooperatesource != null" >
+        #{cooperatesource,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="warehouse != null" >
+        #{warehouse,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="notifyway != null" >
+        #{notifyway,jdbcType=VARCHAR},
+      </if>
+      <if test="accesstoken != null" >
+        #{accesstoken,jdbcType=VARCHAR},
+      </if>
+      <if test="sortno != null" >
+        #{sortno,jdbcType=VARCHAR},
+      </if>
+      <if test="team != null" >
+        #{team,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dj.springboot.entity.Account" >
+    update account
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null" >
+        company = #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null" >
+        department = #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="duty != null" >
+        duty = #{duty,jdbcType=VARCHAR},
+      </if>
+      <if test="usertype != null" >
+        usertype = #{usertype,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="catalog != null" >
+        catalog = #{catalog,jdbcType=VARCHAR},
+      </if>
+      <if test="issaleman != null" >
+        issaleman = #{issaleman,jdbcType=VARCHAR},
+      </if>
+      <if test="isactive != null" >
+        isactive = #{isactive,jdbcType=VARCHAR},
+      </if>
+      <if test="registertime != null" >
+        registertime = #{registertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cooperatesource != null" >
+        cooperatesource = #{cooperatesource,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="warehouse != null" >
+        warehouse = #{warehouse,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="notifyway != null" >
+        notifyway = #{notifyway,jdbcType=VARCHAR},
+      </if>
+      <if test="accesstoken != null" >
+        accesstoken = #{accesstoken,jdbcType=VARCHAR},
+      </if>
+      <if test="sortno != null" >
+        sortno = #{sortno,jdbcType=VARCHAR},
+      </if>
+      <if test="team != null" >
+        team = #{team,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dj.springboot.entity.Account" >
+    update account
+    set name = #{name,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      company = #{company,jdbcType=VARCHAR},
+      department = #{department,jdbcType=VARCHAR},
+      duty = #{duty,jdbcType=VARCHAR},
+      usertype = #{usertype,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      catalog = #{catalog,jdbcType=VARCHAR},
+      issaleman = #{issaleman,jdbcType=VARCHAR},
+      isactive = #{isactive,jdbcType=VARCHAR},
+      registertime = #{registertime,jdbcType=TIMESTAMP},
+      cooperatesource = #{cooperatesource,jdbcType=VARCHAR},
+      position = #{position,jdbcType=VARCHAR},
+      warehouse = #{warehouse,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      notifyway = #{notifyway,jdbcType=VARCHAR},
+      accesstoken = #{accesstoken,jdbcType=VARCHAR},
+      sortno = #{sortno,jdbcType=VARCHAR},
+      team = #{team,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from account
+  </select>
+
+  <select id="getAccountByName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from account
+    where name = #{name,jdbcType=VARCHAR}
+  </select>
+</mapper>
