@@ -3,9 +3,9 @@ Springboot demo
 
 其中包含以下内容
 
-1.集成WEB模块
+1.整合WEB模块
 
-2.集成JWT(Json web token)。login登录验证，返回token；除了login，其他接口都需要header里传auth
+2.整合JWT(Json web token)。login登录验证，返回token；除了login，其他接口都需要header里传auth
 
 3.整合MyBatis框架，集成Mybatis Generator插件，能自动生成Model、DAO、XML映射文件
 
