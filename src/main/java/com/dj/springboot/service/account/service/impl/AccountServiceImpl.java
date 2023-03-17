@@ -5,8 +5,7 @@ import com.dj.springboot.common.util.JWTUtils;
 import com.dj.springboot.dao.AccountMapper;
 import com.dj.springboot.entity.Account;
 import com.dj.springboot.service.account.service.AccountService;
-import com.google.common.base.Strings;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
