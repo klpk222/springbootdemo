@@ -11,4 +11,4 @@ Springboot demo
 
 4.整合Swagger文档，并可以传header参数auth
 
-5.整合open ai(chatgpt)的API，并有例子OpenAiApiExample
+5.整合OpenAI(chatgpt)的API，并有例子OpenAiApiExample
